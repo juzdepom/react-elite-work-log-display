@@ -28,11 +28,11 @@ function App() {
       <h1>ELITEWEB.Co Work Log</h1>
       <p>Total time worked: {total}  
       <br/>
-      <span><i>next task: figure out how to calculate total time worked</i></span>
       </p>
       
       <h3>All Entries</h3>
-      {entries.map((entry, index) => (
+      {
+      entries.map((entry, index) => (
         <div key={index}>
           <span>🗓{entry.fields.date} </span>
           <span>🕐{entry.fields.minutes} min – </span>
