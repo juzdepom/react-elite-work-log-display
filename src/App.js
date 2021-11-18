@@ -1,8 +1,9 @@
 import { apiKey, baseId } from "./airtableIds";
-
+import { calculateTotalMinutesWorked } from "./methods"
 import React, { useEffect, useState } from "react";
 import Airtable from "airtable";
 
+//AIRTABLE
 const base = new Airtable({ apiKey: apiKey }).base(baseId);
 
 function App() {
@@ -21,12 +22,13 @@ function App() {
      });
   }, []);
 
-  let total = 'X hours X min'
+  let totalTimeWorked = calculateTotalMinutesWorked(entries) // will return a string
+
 
   return (
     <div style={{textAlign: "center", fontFamily: "'Roboto', sans-serif"}}>
       <h1>ELITEWEB.Co Work Log</h1>
-      <p>Total time worked: {total}  
+      <p>Total time worked: {totalTimeWorked}  
       <br/>
       </p>
       
