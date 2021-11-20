@@ -2,6 +2,7 @@ import { apiKey, baseId } from "./airtableIds";
 import { calculateTotalMinutesWorked } from "./methods"
 import React, { useEffect, useState } from "react";
 import Airtable from "airtable";
+import Entry from "./components/Entry";
 // import {
 //   Routes,
 //   Route,
@@ -40,15 +41,7 @@ function App() {
       <h3>All Entries</h3>
       {
       entries.map((entry, index) => (
-        <div key={index}>
-          <span>🗓{entry.fields.date} </span>
-          <span>🕐{entry.fields.minutes} min – </span>
-          <span><i>#{entry.fields.tag}</i></span>
-          <br/>
-          <span><i>{entry.fields.description}</i></span>
-          <br/>
-          <br/>
-        </div>
+        <Entry entry={entry} key={index}/>
       ))}
     </div>
   );
