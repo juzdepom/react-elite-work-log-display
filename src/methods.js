@@ -6,7 +6,7 @@ export function calculateTotalMinutesWorked(entries){ // will return a string
         minutes += entry.fields.minutes
       })
       //convert minutes to hours and minutes
-      let hours = minutes / 60 
+      let hours = Math.round(minutes / 60)
       let remainderMinutes = minutes % 60
       let string = `${hours} hours ${remainderMinutes} min`
       return string
